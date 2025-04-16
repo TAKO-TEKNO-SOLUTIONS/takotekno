@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  vue-app:
+    build: .
+    container_name: takotekno_page
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.vueapp.rule=Host(`takotekno.solutions`)"  # Arahkan ke takotekno.solutions
+      - "traefik.http.routers.vueapp.entrypoints=http"
+      - "traefik.http.middlewares.vueapp-https-redirect.redirectscheme.scheme=https"
+      - "traefik.http.routers.vueapp.middlewares=vueapp-https-redirect"
+      - "traefik.http.routers.vueapp-secure.rule=Host(`takotekno.solutions`)"  # Arahkan ke takotekno.solutions
+      - "traefik.http.routers.vueapp-secure.entrypoints=https"
+      - "traefik.http.routers.vueapp-secure.tls=true"
+      - "traefik.http.routers.vueapp-secure.tls.certresolver=http"
+      - "traefik.http.routers.vueapp-secure.service=vueapp"
+      - "traefik.http.services.vueapp.loadbalancer.server.port=80"  # Port yang digunakan oleh Nginx
+      - "traefik.docker.network=proxy"
+    networks:
+      - proxy
+    restart: unless-stopped
+
+networks:
+  proxy:
+    external: true
