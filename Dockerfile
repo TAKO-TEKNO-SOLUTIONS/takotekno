@@ -21,4 +21,4 @@ COPY --from=build /app/dist .
 
 EXPOSE 3000
 
-CMD ["serve", "-s", ".", "-l", "tcp://0.0.0.0:3000"]
+CMD ["serve", "-s", ".", "-l", "0.0.0.0"]
