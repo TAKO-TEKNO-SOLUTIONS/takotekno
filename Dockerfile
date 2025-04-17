@@ -14,7 +14,7 @@ FROM node:23-alpine
 WORKDIR /app
 
 # Install serve secara global
-RUN npm install -g serve
+RUN npm install
 
 # Copy hasil build dari stage sebelumnya
 COPY --from=build /app/dist .
