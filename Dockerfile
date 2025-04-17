@@ -30,4 +30,4 @@ COPY --from=build /app/dist .
 EXPOSE 3000
 
 # Jalankan static server pakai npx
-CMD ["npx", "serve", "-s", ".", "-l", "0.0.0.0"]
+CMD ["serve", "-s", ".", "-l", "0.0.0.0"]
