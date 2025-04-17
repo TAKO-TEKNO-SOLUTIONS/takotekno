@@ -7,7 +7,6 @@ WORKDIR /app
 COPY package.json /app
 
 # Install dependencies
-RUN npm config set registry https://registry.npmjs.org/
 RUN npm install
 
 # Salin semua file project
