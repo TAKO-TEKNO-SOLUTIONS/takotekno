@@ -4,7 +4,7 @@ FROM node:23-alpine AS build
 WORKDIR /app
 
 # Salin dependency file
-COPY package*.json ./
+COPY package.json /app
 
 # Install dependencies
 RUN npm install
