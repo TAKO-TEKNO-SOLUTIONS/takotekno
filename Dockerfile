@@ -3,17 +3,20 @@ FROM node:23-alpine AS build
 
 WORKDIR /app
 
+# Install pnpm
+RUN npm install -g pnpm
+
 # Salin dependency file
 COPY package.json /app
 
-# Install dependencies
-RUN npm install
+# Install dependencies menggunakan pnpm
+RUN pnpm install
 
 # Salin semua file project
 COPY . .
 
 # Build aplikasi Vue
-RUN npm run build
+RUN pnpm run build
 
 # Stage 2: Jalankan hasil build menggunakan npx serve
 FROM node:23-alpine
