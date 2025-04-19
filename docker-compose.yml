@@ -1,8 +1,10 @@
 version: '3.8'
 
 services:
-  vue-app:
-    build: .
+  application:
+    build:
+        context: .
+        dockerfile: Dockerfile
     container_name: takotekno_page
     labels:
       - "traefik.enable=true"
