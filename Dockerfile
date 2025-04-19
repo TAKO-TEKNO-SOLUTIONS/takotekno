@@ -18,10 +18,13 @@ COPY . .
 # Build aplikasi Vue
 RUN pnpm run build
 
-# Stage 2: Jalankan hasil build menggunakan npx serve
+# Stage 2: Jalankan hasil build menggunakan serve
 FROM node:23-alpine
 
 WORKDIR /app
+
+# Install serve secara global
+RUN npm install -g serve
 
 # Salin hasil build dari stage sebelumnya
 COPY --from=build /app/dist .
@@ -29,5 +32,5 @@ COPY --from=build /app/dist .
 # Ekspose port
 EXPOSE 3000
 
-# Jalankan static server pakai npx
+# Jalankan static server pakai serve
 CMD ["serve", "-s", ".", "-l", "0.0.0.0"]
