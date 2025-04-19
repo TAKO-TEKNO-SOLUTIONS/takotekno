@@ -3,19 +3,14 @@ FROM node:23-alpine AS build
 
 WORKDIR /app
 
-# Install pnpm
 RUN npm install -g pnpm
 
-# Salin dependency file
-COPY package.json /app
+COPY package.json pnpm-lock.yaml* ./
 
-# Install dependencies menggunakan pnpm
 RUN pnpm install
 
-# Salin semua file project
 COPY . .
 
-# Build aplikasi Vue
 RUN pnpm run build
 
 # Stage 2: Jalankan hasil build menggunakan serve
@@ -26,11 +21,8 @@ WORKDIR /app
 # Install serve secara global
 RUN npm install -g serve
 
-# Salin hasil build dari stage sebelumnya
 COPY --from=build /app/dist .
 
-# Ekspose port
 EXPOSE 3000
 
-# Jalankan static server pakai serve
-CMD ["serve", "-s", ".", "-l", "0.0.0.0"]
+CMD ["serve", "-s", ".", "-l", "tcp://0.0.0.0:3000"]
