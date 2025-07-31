@@ -348,7 +348,7 @@
           </div>
         </div>
         <div class="text-center pt-5 border-t border-white border-opacity-10">
-          <p>&copy; 2025 PT TAKO TEKNOLOGI SOLUTIONS</p>
+          <p>&copy; {{ currentYear }} PT TAKO TEKNOLOGI SOLUTIONS</p>
         </div>
       </div>
     </footer>
@@ -399,6 +399,9 @@ const closeMenu = () => {
   isMenuOpen.value = false;
   document.body.style.overflow = 'auto';
 };
+
+// Current Year
+const currentYear = computed(() => new Date().getFullYear());
 
 // Dark mode functionality
 const isDarkMode = ref(false);
