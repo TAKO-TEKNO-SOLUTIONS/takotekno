@@ -53,16 +53,12 @@ jobs:
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.KEY }}
           script: |
-            # Load ENV Master (untuk DOCKER_USERNAME)
             export $(cat /root/.env | xargs)
 
             cd /root/containers/takotekno
 
-            # Tarik image baru dari Docker Hub
             docker-compose pull
 
-            # Restart container
             docker-compose up -d --force-recreate
 
-            # Bersihkan image lama
             docker image prune -f
