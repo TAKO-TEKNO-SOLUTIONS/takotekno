@@ -2,26 +2,30 @@ version: '3.8'
 
 services:
   application:
-    build:
-        context: .
-        dockerfile: Dockerfile
+    image: ${DOCKER_USERNAME}/takotekno-page:latest
     container_name: takotekno_page
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 100M
+
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.takopages.rule=Host(`takotekno.solutions`)"  # Arahkan ke takotekno.solutions
-      - "traefik.http.routers.takopages.entrypoints=http"
+      - "traefik.http.routers.takopages.rule=Host(`takotekno.solutions`)"
+      - "traefik.http.routers.takopages.entrypoints=web"
       - "traefik.http.middlewares.takopages-https-redirect.redirectscheme.scheme=https"
       - "traefik.http.routers.takopages.middlewares=takopages-https-redirect"
-      - "traefik.http.routers.takopages-secure.rule=Host(`takotekno.solutions`)"  # Arahkan ke takotekno.solutions
-      - "traefik.http.routers.takopages-secure.entrypoints=https"
+      - "traefik.http.routers.takopages-secure.rule=Host(`takotekno.solutions`)"
+      - "traefik.http.routers.takopages-secure.entrypoints=websecure"
       - "traefik.http.routers.takopages-secure.tls=true"
       - "traefik.http.routers.takopages-secure.tls.certresolver=http"
       - "traefik.http.routers.takopages-secure.service=takopages"
-      - "traefik.http.services.takopages.loadbalancer.server.port=3000"  # Port yang digunakan oleh Nginx
+      - "traefik.http.services.takopages.loadbalancer.server.port=80"
       - "traefik.docker.network=proxy"
+
     networks:
       - proxy
-    restart: unless-stopped
 
 networks:
   proxy:
