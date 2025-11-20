@@ -3,7 +3,6 @@ name: Deploy TakoTekno Page
 on:
   push:
     branches: [ "master" ]
-    # Hanya jalan jika ada perubahan di folder proyek ini
     paths:
       - 'tako-tekno-solutions/takotekno/**'
   workflow_dispatch:
@@ -24,7 +23,7 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           # Arahkan ke folder proyek Anda
-          context: ./tako-tekno-solutions/takotekno/takotekno-807fdab8f6e53e6959ac6e34b82e3fb8c1eeb2ea
+          context: .
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/takotekno-page:latest
 
@@ -41,7 +40,7 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.KEY }}
-          source: "tako-tekno-solutions/takotekno/takotekno-807fdab8f6e53e6959ac6e34b82e3fb8c1eeb2ea/docker-compose.yml"
+          source: "docker-compose.yml"
           target: "/root/containers/takotekno"
           strip_components: 4
           rm: false
