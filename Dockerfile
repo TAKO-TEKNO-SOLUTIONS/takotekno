@@ -1,11 +1,10 @@
-# Stage 1: Build Vue (Tetap Node, tapi jalan di GitHub Action)
+# Stage 1: Build Vue
 FROM node:23-alpine AS build
 WORKDIR /app
-RUN npm install -g pnpm
-COPY package.json pnpm-lock.yaml* ./
-RUN pnpm install
+COPY package.json package-lock.json* ./
+RUN npm ci
 COPY . .
-RUN pnpm run build
+RUN npm run build
 
 # Stage 2: Serve dengan Nginx (Super Hemat RAM ~10MB)
 FROM nginx:alpine
