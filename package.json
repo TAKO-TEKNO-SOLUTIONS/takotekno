@@ -28,5 +28,10 @@
     "prettier": "3.5.3",
     "vite": "^6.3.0",
     "vite-plugin-vue-devtools": "^7.7.2"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
   }
 }
