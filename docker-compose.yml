@@ -12,11 +12,11 @@ services:
 
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.takopages.rule=Host(`takotekno.solutions`)"
+      - "traefik.http.routers.takopages.rule=Host(`takotekno.biz.id`)"
       - "traefik.http.routers.takopages.entrypoints=web"
       - "traefik.http.middlewares.takopages-https-redirect.redirectscheme.scheme=https"
       - "traefik.http.routers.takopages.middlewares=takopages-https-redirect"
-      - "traefik.http.routers.takopages-secure.rule=Host(`takotekno.solutions`)"
+      - "traefik.http.routers.takopages-secure.rule=Host(`takotekno.biz.id`)"
       - "traefik.http.routers.takopages-secure.entrypoints=websecure"
       - "traefik.http.routers.takopages-secure.tls=true"
       - "traefik.http.routers.takopages-secure.tls.certresolver=http"
