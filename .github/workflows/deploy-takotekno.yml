@@ -45,7 +45,7 @@ jobs:
           key: ${{ secrets.KEY }}
           script: |
             # Kita pakai folder workspace sesuai permintaan Anda
-            mkdir -p /root/workspace/takotekno
+            mkdir -p /ubuntu/workspace/takotekno
 
       - name: Copy config to VPS
         uses: appleboy/scp-action@master
@@ -54,7 +54,7 @@ jobs:
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.KEY }}
           source: "docker-compose.yml"
-          target: "/root/workspace/takotekno"
+          target: "/ubuntu/workspace/takotekno"
           rm: false
 
       # === LANGKAH 3: Eksekusi Deploy ===
@@ -65,9 +65,9 @@ jobs:
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.KEY }}
           script: |
-            export $(cat /root/.env | xargs)
+            export $(cat /ubuntu/.env | xargs)
 
-            cd /root/workspace/takotekno
+            cd /ubuntu/workspace/takotekno
 
             docker-compose pull
 
