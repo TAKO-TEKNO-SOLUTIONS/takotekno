@@ -13,8 +13,8 @@
         <!-- Logo -->
         <a href="#home" class="logo-wrap flex items-center gap-3" aria-label="TakoTekno Home">
           <picture>
-            <source srcset="@assets/logo.webp" type="image/webp" />
-            <img src="@assets/logo.png" alt="TakoTekno Logo" class="h-10 w-auto object-contain" width="228" height="79" fetchpriority="high" />
+            <source srcset="/logo.webp" type="image/webp" />
+            <img src="/logo.png" alt="TakoTekno Logo" class="h-10 w-auto object-contain" width="228" height="79" fetchpriority="high" />
           </picture>
         </a>
 
