@@ -33,4 +33,20 @@ export default defineConfig({
       '@assets': path.resolve(__dirname, 'src/assets'),
     },
   },
+  build: {
+    // Inline assets smaller than 4KB directly into JS/CSS to avoid extra requests
+    assetsInlineLimit: 4096,
+    rollupOptions: {
+      output: {
+        // Split vendor code into separate chunks for better caching
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            if (id.includes('vue') || id.includes('@vue')) return 'vue-vendor';
+            if (id.includes('lucide')) return 'icons';
+            return 'vendor';
+          }
+        },
+      },
+    },
+  },
 })

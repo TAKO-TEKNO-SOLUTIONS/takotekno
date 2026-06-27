@@ -64,14 +64,17 @@
             <!-- Main Logo Display Card -->
             <div class="hero-logo-card">
               <div class="logo-glow-ring">
-                <img
-                  src="@assets/tako-logo.png"
-                  alt="TakoTekno — AI Agency Indonesia"
-                  class="hero-logo-img"
-                  width="360"
-                  height="360"
-                  fetchpriority="high"
-                />
+                <picture>
+                  <source srcset="@assets/tako-logo.webp" type="image/webp" />
+                  <img
+                    src="@assets/tako-logo.png"
+                    alt="TakoTekno — AI Agency Indonesia"
+                    class="hero-logo-img"
+                    width="360"
+                    height="360"
+                    fetchpriority="high"
+                  />
+                </picture>
               </div>
             </div>
           </div>
