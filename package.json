@@ -11,6 +11,8 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@fontsource/bricolage-grotesque": "^5.2.10",
+    "@fontsource/sora": "^5.2.8",
     "@tailwindcss/vite": "^4.1.4",
     "crypto-browserify": "^3.12.1",
     "lucide-vue-next": "^0.488.0",

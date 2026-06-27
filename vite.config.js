@@ -37,11 +37,23 @@ export default defineConfig({
     // Inline assets smaller than 4KB directly into JS/CSS to avoid extra requests
     assetsInlineLimit: 4096,
     rollupOptions: {
+      plugins: [
+        // Exclude legacy .woff files — only serve modern .woff2 (supported by all modern browsers)
+        {
+          name: 'exclude-woff',
+          resolveId(id) {
+            if (id.endsWith('.woff') && !id.endsWith('.woff2')) {
+              return { id, external: true };
+            }
+          },
+        },
+      ],
       output: {
         // Split vendor code into separate chunks for better caching
         manualChunks(id) {
           if (id.includes('node_modules')) {
             if (id.includes('vue') || id.includes('@vue')) return 'vue-vendor';
+            if (id.includes('@fontsource')) return 'fonts';
             if (id.includes('lucide')) return 'icons';
             return 'vendor';
           }
