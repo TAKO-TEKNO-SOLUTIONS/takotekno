@@ -15,7 +15,7 @@
         <!-- Brand -->
         <div class="lg:col-span-2">
           <div class="flex items-center gap-3 mb-5">
-            <img src="@assets/logo.png" alt="TakoTekno Logo" class="h-10 w-auto" width="400" height="140" loading="lazy" />
+            <img src="@assets/logo.png" alt="TakoTekno Logo" class="h-10 w-auto" width="228" height="79" loading="lazy" />
           </div>
           <p class="footer-tagline mb-6 text-[var(--text-secondary)]">{{ t('footer.tagline') }}</p>
 

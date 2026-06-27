@@ -68,8 +68,8 @@
                   src="@assets/tako-logo.png"
                   alt="TakoTekno — AI Agency Indonesia"
                   class="hero-logo-img"
-                  width="640"
-                  height="640"
+                  width="360"
+                  height="360"
                   fetchpriority="high"
                 />
               </div>
