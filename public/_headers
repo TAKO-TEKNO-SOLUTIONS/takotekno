@@ -1,0 +1,21 @@
+# ─── Cloudflare Pages Custom Headers (Performance Optimization) ───────────
+
+# Cache all static build assets from Vite (/assets/) for 1 year (immutable)
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Cache static images and icons in the public folder for 1 year
+/logo.webp
+  Cache-Control: public, max-age=31536000, immutable
+/logo.png
+  Cache-Control: public, max-age=31536000, immutable
+/favicon.ico
+  Cache-Control: public, max-age=31536000, immutable
+
+# Keep HTML and XML sitemaps fresh (cache for 5 minutes, must revalidate)
+/index.html
+  Cache-Control: public, max-age=300, must-revalidate
+/sitemap.xml
+  Cache-Control: public, max-age=300, must-revalidate
+/robots.txt
+  Cache-Control: public, max-age=300, must-revalidate
