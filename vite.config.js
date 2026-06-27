@@ -17,7 +17,7 @@ function criticalCssPlugin() {
       const critters = new Critters({
         path: './dist',
         publicPath: '/',
-        preload: 'swap',       // font-display: swap for non-critical fonts
+        preload: 'media',      // Use media="print" + onload="this.media='all'" for non-blocking CSS
         inlineFonts: false,    // don't inline fonts — they're self-hosted woff2
         pruneSource: false,    // keep original CSS file (still needed for below-fold)
         logLevel: 'warn',
