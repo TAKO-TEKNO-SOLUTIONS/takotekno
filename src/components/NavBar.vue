@@ -12,7 +12,7 @@
 
         <!-- Logo -->
         <a href="#home" class="logo-wrap flex items-center gap-3" aria-label="TakoTekno Home">
-          <img src="@assets/logo.png" alt="TakoTekno Logo" class="h-10 w-auto object-contain" />
+          <img src="@assets/logo.png" alt="TakoTekno Logo" class="h-10 w-auto object-contain" width="400" height="140" fetchpriority="high" />
         </a>
 
         <!-- Desktop Nav -->

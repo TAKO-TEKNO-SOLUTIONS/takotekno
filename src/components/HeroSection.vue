@@ -68,6 +68,9 @@
                   src="@assets/tako-logo.png"
                   alt="TakoTekno — AI Agency Indonesia"
                   class="hero-logo-img"
+                  width="640"
+                  height="640"
+                  fetchpriority="high"
                 />
               </div>
             </div>
@@ -176,8 +179,8 @@ onMounted(() => {
 }
 
 @keyframes logoPulse {
-  0%, 100% { filter: drop-shadow(0 0 20px rgba(105, 89, 125, 0.2)); transform: scale(1); }
-  50%       { filter: drop-shadow(0 0 35px rgba(125, 105, 89, 0.25)); transform: scale(1.02); }
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.02); }
 }
 
 /* Scroll indicator */
