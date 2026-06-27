@@ -86,7 +86,7 @@
 
 <script setup>
 import { computed } from 'vue';
-import { ChevronRight, Linkedin, Twitter, Facebook, Instagram } from 'lucide-vue-next';
+import { ChevronRight, Twitter, Facebook, Instagram } from 'lucide-vue-next';
 import { useTranslations } from '@/composables/useTranslations.js';
 
 const { t } = useTranslations();
@@ -103,7 +103,6 @@ const quickLinks = [
 ];
 
 const socials = [
-  { icon: Linkedin,  label: 'LinkedIn TakoTekno',  href: '#' },
   { icon: Twitter,   label: 'Twitter TakoTekno',   href: '#' },
   { icon: Instagram, label: 'Instagram TakoTekno', href: '#' },
   { icon: Facebook,  label: 'Facebook TakoTekno',  href: '#' },

@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
-  <!-- Homepage (ID) -->
+  <!-- ════════════════════════════════════════════════
+       Homepage — highest priority, all hreflang
+       ════════════════════════════════════════════════ -->
   <url>
     <loc>https://takotekno.biz.id/</loc>
     <lastmod>2026-06-27</lastmod>
@@ -11,6 +14,80 @@
     <xhtml:link rel="alternate" hreflang="id" href="https://takotekno.biz.id/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://takotekno.biz.id/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://takotekno.biz.id/" />
+    <image:image>
+      <image:loc>https://takotekno.biz.id/og-image.png</image:loc>
+      <image:title>TakoTekno — Agentic AI Agency &amp; Software House Surabaya</image:title>
+      <image:caption>AI agency dan software house berbasis di Surabaya, melayani seluruh Indonesia</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://takotekno.biz.id/logo.png</image:loc>
+      <image:title>TakoTekno Logo</image:title>
+    </image:image>
+  </url>
+
+  <!-- ════════════════════════════════════════════════
+       #about — Tentang Kami
+       ════════════════════════════════════════════════ -->
+  <url>
+    <loc>https://takotekno.biz.id/#about</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="id" href="https://takotekno.biz.id/#about" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://takotekno.biz.id/#about" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://takotekno.biz.id/#about" />
+  </url>
+
+  <!-- ════════════════════════════════════════════════
+       #services — Layanan (high-value commercial page)
+       ════════════════════════════════════════════════ -->
+  <url>
+    <loc>https://takotekno.biz.id/#services</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="id" href="https://takotekno.biz.id/#services" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://takotekno.biz.id/#services" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://takotekno.biz.id/#services" />
+  </url>
+
+  <!-- ════════════════════════════════════════════════
+       #clients — Klien Kami
+       ════════════════════════════════════════════════ -->
+  <url>
+    <loc>https://takotekno.biz.id/#clients</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="id" href="https://takotekno.biz.id/#clients" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://takotekno.biz.id/#clients" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://takotekno.biz.id/#clients" />
+  </url>
+
+  <!-- ════════════════════════════════════════════════
+       #why-us — Mengapa TakoTekno
+       ════════════════════════════════════════════════ -->
+  <url>
+    <loc>https://takotekno.biz.id/#why-us</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="id" href="https://takotekno.biz.id/#why-us" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://takotekno.biz.id/#why-us" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://takotekno.biz.id/#why-us" />
+  </url>
+
+  <!-- ════════════════════════════════════════════════
+       #contact — Hubungi Kami (high conversion priority)
+       ════════════════════════════════════════════════ -->
+  <url>
+    <loc>https://takotekno.biz.id/#contact</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="id" href="https://takotekno.biz.id/#contact" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://takotekno.biz.id/#contact" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://takotekno.biz.id/#contact" />
   </url>
 
 </urlset>
