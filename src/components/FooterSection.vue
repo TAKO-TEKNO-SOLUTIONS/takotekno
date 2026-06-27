@@ -73,7 +73,7 @@
 
       <!-- Bottom row -->
       <div class="footer-bottom">
-        <p class="footer-copy text-[var(--text-muted)]">
+        <p class="footer-copy text-[var(--text-secondary)]">
           &copy; {{ currentYear }} {{ t('footer.copyright') }}
         </p>
       </div>

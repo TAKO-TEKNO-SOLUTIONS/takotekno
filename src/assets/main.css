@@ -451,19 +451,19 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   gap: 6px;
   padding: 6px 14px;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(105, 89, 125, 0.05);
+  border: 1px solid rgba(105, 89, 125, 0.15);
   border-radius: 999px;
   font-size: 0.8rem;
   font-weight: 500;
-  color: rgba(255,255,255,0.75);
+  color: var(--text-secondary);
   transition: all var(--transition-fast);
   cursor: default;
 }
 .tech-pill:hover {
   background: rgba(105, 89, 125, 0.12);
   border-color: rgba(105, 89, 125, 0.30);
-  color: #fff;
+  color: var(--primary);
 }
 
 /* ─── Particle Dots ──────────────────────────────────────────── */
