@@ -4,6 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!-- ─── Google Analytics — harus di atas <head> agar terdeteksi Google ── -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LSDBS549P8"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-LSDBS549P8');
+    </script>
+
     <!-- ─── LCP Preload: NavBar logo (stable public URL, no hash) ── -->
     <link rel="preload" as="image" href="/logo.webp" type="image/webp" fetchpriority="high" />
 
@@ -336,14 +345,6 @@
         "areaServed": { "@type": "Country", "name": "Indonesia" }
       }
     </script>
-
-    <!-- ─── Google Analytics (async, bottom of head — doesn't block critical preloads) ── -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LSDBS549P8"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-LSDBS549P8');
     </script>
   </head>
   <body>
